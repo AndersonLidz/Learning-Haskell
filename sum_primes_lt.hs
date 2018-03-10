@@ -78,3 +78,8 @@ myquicksort::(Ord a)=>[a]->[a]
 myquicksort(x:[]) = x:[]
 myquicksort [] = []
 myquicksort (x:xs)= (myquicksort [n| n<-xs, n<x]) ++ [x] ++ (myquicksort [n| n<-xs, n>=x])
+
+
+--A far simpler solution
+
+ssp x = length (takeWhile (<x) (scanl1 (+) (prime_finder [1..])))
